@@ -12,9 +12,9 @@ API_SECRET = 'tu_api_secret'
 client = Client(API_KEY, API_SECRET)
 
 # Configuración de Telegram
-bot_token = "6858227834:AAFCrkSvOocikihP8HWsfBhcmUgGji-fRic"
+bot_token = ""
 bot = telebot.TeleBot(bot_token)
-chat_id = 1741049813
+chat_id = 
 
 # Función para enviar mensaje a Telegram
 def enviar_alerta_telegram(message):

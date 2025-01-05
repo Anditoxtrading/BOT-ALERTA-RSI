@@ -31,3 +31,4 @@ Debes instalar las siguientes librerías antes de ejecutar el proyecto:
 
    
 
+- **No es necesario colocar las apis de binance para que el bot funcione correctamente**

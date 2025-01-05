@@ -22,8 +22,7 @@ Este proyecto implementa un bot en Python que calcula el RSI (Índice de Fuerza 
 ### Librerías necesarias
 Debes instalar las siguientes librerías antes de ejecutar el proyecto:
 
- **`Librerias`**  
-   Manipulación de datos en estructuras tabulares.  
+ **`Librerias`**    
    ```bash
    pip install pandas
    pip install numpy

@@ -30,5 +30,4 @@ Debes instalar las siguientes librerías antes de ejecutar el proyecto:
    pip install pyTelegramBotAPI
 
    
-
-- **No es necesario colocar las apis de binance para que el bot funcione correctamente**
+### No es necesario colocar las apis de binance para que el bot funcione correctamente

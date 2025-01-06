@@ -12,9 +12,9 @@ API_SECRET = 'tu_api_secret'
 client = Client(API_KEY, API_SECRET)
 
 # Configuración de Telegram
-bot_token = ""
+bot_token = "Tu_Token_Bot"
 bot = telebot.TeleBot(bot_token)
-chat_id = 
+chat_id = Tu_ID_de_telegram
 
 # Función para enviar mensaje a Telegram
 def enviar_alerta_telegram(message):
@@ -38,17 +38,22 @@ def obtener_datos_klines(simbolo, intervalo, limite=100):
 
 def calcular_rsi(datos, periodos=14):
     """
-    Calcula el RSI a partir de datos de cierre.
+    Calcula el RSI usando el método suavizado (similar al de TradingView).
     """
     delta = datos['close'].diff()
+
+    # Calcular ganancias y pérdidas
     ganancia = np.where(delta > 0, delta, 0)
     perdida = np.where(delta < 0, -delta, 0)
-    
-    avg_ganancia = pd.Series(ganancia).rolling(window=periodos).mean()
-    avg_perdida = pd.Series(perdida).rolling(window=periodos).mean()
-    
+
+    # Calcular las medias exponenciales
+    avg_ganancia = pd.Series(ganancia).ewm(span=periodos, adjust=False).mean()
+    avg_perdida = pd.Series(perdida).ewm(span=periodos, adjust=False).mean()
+
+    # Calcular el RSI
     rs = avg_ganancia / avg_perdida
     rsi = 100 - (100 / (1 + rs))
+
     datos['rsi'] = rsi
     return datos
 
